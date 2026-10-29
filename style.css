@@ -1,6 +1,6 @@
 :root {
-  --amarelo: #fdc630;
-  --amarelo-escuro: #fdc630;
+  --amarelo: #ffd60a;
+  --amarelo-escuro: #e6bd00;
   --preto: #000;
   --grafite: #161616;
   --branco: #fffdf2;
@@ -58,7 +58,7 @@ a { color: inherit; }
   text-decoration: none;
 }
 
-.topo nav { display: flex; gap: clamp(0.8rem, 2.5vw, 2rem); }
+.topo nav { display: flex; gap: clamp(0.8rem, 2vw, 1.6rem); overflow-x: auto; white-space: nowrap; }
 
 .topo nav a {
   color: var(--branco);
@@ -287,6 +287,96 @@ a { color: inherit; }
 
 .aviso { font-size: 0.95rem; margin: 0 0 1rem; }
 
+/* ---------- Portfólios e calendários ---------- */
+.grade-arquivos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.grade-arquivos.paisagem { grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr)); }
+
+.arquivo { margin: 0; position: relative; }
+
+.arquivo > a { display: block; text-decoration: none; }
+
+.arquivo .capa {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: top;
+  background: var(--grafite);
+  border: 4px solid var(--preto);
+  box-shadow: 6px 6px 0 var(--amarelo);
+  transition: transform 0.15s;
+}
+
+.paisagem .arquivo .capa {
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  object-position: center;
+  border-color: var(--amarelo);
+  box-shadow: 6px 6px 0 var(--vermelho);
+}
+
+.arquivo > a:hover .capa { transform: translateY(-3px); }
+
+.arquivo figcaption {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.remover {
+  flex: none;
+  padding: 0.1rem 0.5rem;
+  font: inherit;
+  font-size: 0.85rem;
+  color: inherit;
+  background: transparent;
+  border: 2px solid currentColor;
+  cursor: pointer;
+}
+
+.remover:hover { background: var(--vermelho); border-color: var(--vermelho); color: var(--branco); }
+
+.vazio { grid-column: 1 / -1; margin: 0; padding: 1.5rem; border: 3px dashed currentColor; opacity: 0.75; }
+
+.form-envio {
+  display: grid;
+  gap: 1rem;
+  max-width: 30rem;
+  padding: 1.5rem;
+  border: 4px solid var(--preto);
+  background: var(--amarelo);
+  color: var(--preto);
+}
+
+.escura .form-envio { border-color: var(--amarelo); }
+
+.form-envio h3 { font-size: 1.6rem; margin: 0; }
+.form-envio label { display: grid; gap: 0.3rem; font-weight: 700; }
+
+.form-envio input {
+  font: inherit;
+  padding: 0.6rem;
+  background: var(--branco);
+  border: 3px solid var(--preto);
+  border-radius: 0;
+}
+
+.botao-amarelo { background: var(--preto); color: var(--amarelo); }
+.botao-amarelo:hover { background: var(--vermelho); border-color: var(--vermelho); color: var(--branco); }
+
+.msg { margin: 0; min-height: 1.4em; font-weight: 700; }
+.msg.erro { color: var(--vermelho); background: var(--preto); padding: 0.3rem 0.6rem; }
+
 /* ---------- Rodapé ---------- */
 .rodape {
   display: flex;
@@ -311,7 +401,6 @@ a { color: inherit; }
   .moldura-drive iframe { height: 26rem; }
   .quem-grade { grid-template-columns: 1fr; }
   .logo-quadro { max-width: 18rem; }
-  .topo nav a:nth-child(2) { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {

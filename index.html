@@ -20,6 +20,8 @@
       <a href="#sustentabilidade">Sustentabilidade</a>
       <a href="#videos">Vídeos</a>
       <a href="#fotos">Fotos</a>
+      <a href="#portfolios">Portfólios</a>
+      <a href="#calendarios">Calendários</a>
     </nav>
   </header>
 
@@ -47,7 +49,7 @@
         </figure>
         <div class="quem-texto">
           <h2>Quem somos</h2>
-          <p>Somos a Ampharos FTC, uma equipe de robótica do Colégio SESI Centro, em Curitiba (PR), que participa da FIRST Tech Challenge (FTC). Fundada em 2023, nossa equipe tem como propósito espalhar a robótica, compartilhando conhecimento, incentivando a inovação e inspirando novas pessoas a se envolverem com a tecnologia.</p>
+          <p>Somos a Ampharos FTC, uma equipe de robótica do Colégio SESI Centro, em Curitiba (PR), que participa da FIRST Tech Challenge (FTC). Fundada em 2024, nossa equipe tem como propósito espalhar a robótica, compartilhando conhecimento, incentivando a inovação e inspirando novas pessoas a se envolverem com a tecnologia.</p>
           <p>Unimos engenharia, programação, estratégia e marketing para desenvolver soluções, superar desafios e crescer juntos a cada temporada, sempre guiados pelos valores da FIRST.</p>
         </div>
       </div>
@@ -55,11 +57,11 @@
 
     <section class="secao escura" id="sustentabilidade">
       <div class="conteudo estreito">
-        <h2>Sustentabilidade é parte do desenvolvimento pessoal.</h2>
-        <p>Na Ampharos, pensar no meio ambiente não fica só nos materiais utilizados nos robôs, mas fica no legado e aprendizado que levaremos para nossos futuros membros.</p>
+        <h2>Sustentabilidade tambem no desenvolvimento pessoal</h2>
+        <p>Na Ampharos, pensar no meio ambiente não fica só nos materiais usados no robô. Ele entra na hora de deixar legado e aprendizado para nossos futuros membros.</p>
         <ul class="pilares">
-          <li><strong>Reaproveitar</strong><span>Calendarios de outros anos para que os futuros tenham base para começar.</span></li>
-          <li><strong>Planejar</strong><span>Sempre deixar da melhor forma para que o futuro siga nosso legado.</span></li>
+          <li><strong>Reaproveitar</strong><span>Calendarios de outros anos para que os membros tenham base para começar.</span></li>
+          <li><strong>Planejar</strong><span>Sempre deixar da melhor forma para que os futuros sigam nosso legado.</span></li>
           <li><strong>Ensinar</strong><span>Todo membro novo aprende esses hábitos desde o primeiro dia.</span></li>
         </ul>
       </div>
@@ -76,7 +78,7 @@
               <img src="https://img.youtube.com/vi/q22ovBth4YU/hqdefault.jpg" alt="" loading="lazy">
               <span class="play"></span>
             </button>
-            <h3>Projeto sócial do zero</h3>
+            <h3>Projeto sócia do zero</h3>
             <p>Como começar um projeto do primeiro passo, explicado pelos membros.</p>
             <a href="https://youtu.be/q22ovBth4YU" target="_blank" rel="noopener">Abrir no YouTube</a>
           </article>
@@ -116,8 +118,50 @@
             loading="lazy"></iframe>
         </div>
 
+        <p class="aviso">Se a pasta não aparecer, ela precisa estar com o compartilhamento em “Qualquer pessoa com o link”.</p>
         <a class="botao botao-preto" target="_blank" rel="noopener"
            href="https://drive.google.com/drive/folders/19FuLO3K0xBghvI86Kf-j8EIO4OnBw3xj">Abrir pasta no Drive</a>
+      </div>
+    </section>
+    <section class="secao" id="portfolios">
+      <div class="conteudo">
+        <h2>Portfólios</h2>
+        <p class="intro">Os portfólios das temporadas da equipe. A capa de cada um aparece aqui e, ao clicar, o arquivo abre em outra aba.</p>
+
+        <div class="grade-arquivos" id="lista-portfolios" aria-live="polite"></div>
+
+        <form class="form-envio" id="form-portfolios" data-tipo="portfolios">
+          <h3>Adicionar novo portfólio</h3>
+          <label>Nome do portfólio
+            <input type="text" name="nome" maxlength="80" placeholder="Ex.: Portfólio 2026" required>
+          </label>
+          <label>Arquivo (PDF)
+            <input type="file" name="arquivo" accept="application/pdf" required>
+          </label>
+          <button class="botao botao-preto" type="submit">Adicionar portfólio</button>
+          <p class="msg" role="status"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="secao escura" id="calendarios">
+      <div class="conteudo">
+        <h2>Calendários</h2>
+        <p class="intro">Calendários de treinos, reuniões e competições da equipe. Envie uma imagem ou um PDF e ele aparece aqui.</p>
+
+        <div class="grade-arquivos paisagem" id="lista-calendarios" aria-live="polite"></div>
+
+        <form class="form-envio" id="form-calendarios" data-tipo="calendarios">
+          <h3>Enviar calendário</h3>
+          <label>Nome do calendário
+            <input type="text" name="nome" maxlength="80" placeholder="Ex.: Treinos de novembro" required>
+          </label>
+          <label>Arquivo (imagem ou PDF)
+            <input type="file" name="arquivo" accept="image/*,application/pdf" required>
+          </label>
+          <button class="botao botao-amarelo" type="submit">Enviar calendário</button>
+          <p class="msg" role="status"></p>
+        </form>
       </div>
     </section>
   </main>
@@ -127,6 +171,7 @@
     <p>© <span id="ano"></span> Todos os direitos reservados à equipe.</p>
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
